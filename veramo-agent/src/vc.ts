@@ -17,11 +17,28 @@ async function main() {
             },
         },
         proofFormat: 'jwt',
-        save: true,
     })
 
     console.log('vc creation : ');
     console.log(vc); // 이 정보를 QR로 제공한다고 생각.
+
+    const data:any = await agent.handleMessage({
+        raw: vc.proof.jwt,
+    });
+    console.log('data: ');
+    console.log(data);
+    console.log(data.credentials);
+
+    for(const credential of data.credentials) {
+        const hash = await agent.dataStoreSaveVerifiableCredential({
+            verifiableCredential: credential,
+        })
+        console.log(hash);
+
+    }
+
+
+
 }
 
 main().catch(console.log)

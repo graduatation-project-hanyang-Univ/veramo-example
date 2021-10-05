@@ -9,6 +9,7 @@
   },
   "scripts": {
     "id:list": "ts-node ./src/list-identifiers",
+    "id:find": "ts-node ./src/find-identifier.ts",
     "id:create": "ts-node ./src/create-identifier",
     "id:resolve": "ts-node ./src/resolve-did.ts",
     "did:comm": "ts-node ./src/did-comm.ts",
