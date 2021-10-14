@@ -3,7 +3,7 @@ import {IIdentifier} from "@veramo/core";
 
 async function main() {
     const ids = await agent.didManagerFind();
-    const id: IIdentifier = ids[0];
+    const id: IIdentifier = ids[1];
 
     // issuer에서 QR로 제공
     const jwt = await agent.createSelectiveDisclosureRequest({
@@ -20,7 +20,7 @@ async function main() {
     });
     console.log(jwt)
 
-    
+
     // QR로 받은 정보 해석 후 분석
     const sdr:any = await agent.handleMessage({
         raw: jwt,
@@ -44,6 +44,8 @@ async function main() {
         },
         proofFormat: 'jwt',
     })
+
+    console.log('presented', JSON.stringify(presented, null, 2))
 
     const validated = await agent.validatePresentationAgainstSdr({
         presentation: presented,

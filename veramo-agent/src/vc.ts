@@ -17,6 +17,7 @@ async function main() {
             },
         },
         proofFormat: 'jwt',
+        save: false,
     })
 
     console.log('vc creation : ');

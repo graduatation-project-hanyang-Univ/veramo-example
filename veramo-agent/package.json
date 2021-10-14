@@ -14,7 +14,8 @@
     "id:resolve": "ts-node ./src/resolve-did.ts",
     "did:comm": "ts-node ./src/did-comm.ts",
     "vc": "ts-node ./src/vc.ts",
-    "vp": "ts-node ./src/vp.ts"
+    "vp": "ts-node ./src/vp.ts",
+    "find-vcs": "ts-node ./src/find-vc.ts"
   },
   "dependencies": {
     "@veramo/core": "^3.0.0",
